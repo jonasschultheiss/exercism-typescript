@@ -1,9 +1,13 @@
 class SimpleCipher {
-  public key: number;
+  public key: string;
 
-  public SimpleCipher() {
-    
+  constructor(key: string) {
+    if (key !== key.toLowerCase() || key === '' || typeof key === 'number') {
+      console.log('here');
+      throw new Error('Bad key');
+    } 
   }
+
     encode( /* Parameters go here */ ) {
         // Your code here
     }
